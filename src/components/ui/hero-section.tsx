@@ -4,14 +4,16 @@ import { useState } from "react";
 import Image from "next/image";
 import { motion } from "framer-motion";
 import { FaFacebook, FaLinkedinIn, FaInstagram, FaBars, FaTimes, FaChevronRight } from "react-icons/fa";
+import { HiHome, HiUsers, HiBriefcase, HiMail } from "react-icons/hi";
 import { MdOutlineEmail, MdOutlinePhone } from "react-icons/md";
 import { IoLocationOutline } from "react-icons/io5";
+import { TubelightNavBar } from "@/components/ui/tubelight-navbar";
 
-const navLinks = [
-  { label: "INICIO", href: "#inicio" },
-  { label: "NOSOTROS", href: "#nosotros" },
-  { label: "SERVICIOS", href: "#servicios" },
-  { label: "CONTACTO", href: "#contacto" },
+const navItems = [
+  { name: "INICIO",    url: "#inicio",    icon: HiHome },
+  { name: "NOSOTROS",  url: "#nosotros",  icon: HiUsers },
+  { name: "SERVICIOS", url: "#servicios", icon: HiBriefcase },
+  { name: "CONTACTO",  url: "#contacto",  icon: HiMail },
 ];
 
 const socialLinks = [
@@ -63,19 +65,9 @@ export function HeroSection() {
 
       {/* ── Navbar ───────────────────────────────────────── */}
       <nav className="sticky top-0 z-50 bg-caoba-primary shadow-md">
-        <div className="mx-auto flex max-w-7xl items-center justify-between px-6 py-4">
-          {/* Desktop links */}
-          <div className="hidden items-center gap-10 md:flex">
-            {navLinks.map((link) => (
-              <a
-                key={link.label}
-                href={link.href}
-                className="text-xs font-bold tracking-widest text-white/80 transition-colors hover:text-white"
-              >
-                {link.label}
-              </a>
-            ))}
-          </div>
+        <div className="mx-auto flex max-w-7xl items-center justify-between px-6 py-3">
+          {/* Tubelight nav — desktop center */}
+          <TubelightNavBar items={navItems} className="hidden md:flex" />
 
           {/* Desktop CTA */}
           <a
@@ -103,14 +95,14 @@ export function HeroSection() {
             animate={{ opacity: 1, y: 0 }}
             className="flex flex-col gap-4 bg-caoba-primary-dark px-6 py-5 md:hidden"
           >
-            {navLinks.map((link) => (
+            {navItems.map((item) => (
               <a
-                key={link.label}
-                href={link.href}
+                key={item.name}
+                href={item.url}
                 onClick={() => setMobileOpen(false)}
                 className="text-xs font-bold tracking-widest text-white/80 hover:text-white"
               >
-                {link.label}
+                {item.name}
               </a>
             ))}
             <a
