@@ -45,6 +45,18 @@
   --font-mono: var(--font-geist-mono);
 }
 
+/* ─── Marquee animation ───────────────────────────────────────────── */
+@keyframes marquee {
+  from { transform: translateX(0); }
+  to   { transform: translateX(-50%); }
+}
+
+@layer utilities {
+  .animate-marquee {
+    animation: marquee var(--duration, 45s) linear infinite;
+  }
+}
+
 /* ─── Base styles ─────────────────────────────────────────────────── */
 body {
   background: var(--caoba-bg);
