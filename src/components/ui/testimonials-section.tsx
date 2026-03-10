@@ -1,8 +1,11 @@
 "use client";
 
-import { motion, useInView } from "framer-motion";
+import { motion, useInView, useAnimationFrame } from "framer-motion";
 import { useRef } from "react";
 import { TestimonialCard } from "@/components/ui/testimonial-card";
+
+const COPIES = 4;
+const SPEED = 45; // px/s
 
 const testimonials = [
   {
@@ -64,6 +67,19 @@ const testimonials = [
 export function TestimonialsSection() {
   const ref = useRef<HTMLDivElement>(null);
   const inView = useInView(ref, { once: true, margin: "-60px" });
+
+  const trackRef = useRef<HTMLDivElement>(null);
+  const posRef = useRef(0);
+  const pausedRef = useRef(false);
+
+  useAnimationFrame((_, delta) => {
+    if (pausedRef.current || !trackRef.current) return;
+    // One "set" = scrollWidth / COPIES (measured from actual DOM)
+    const setWidth = trackRef.current.scrollWidth / COPIES;
+    posRef.current -= (delta / 1000) * SPEED;
+    if (posRef.current <= -setWidth) posRef.current += setWidth;
+    trackRef.current.style.transform = `translateX(${posRef.current}px)`;
+  });
 
   return (
     <section className="overflow-hidden bg-caoba-bg-soft py-24">
@@ -141,17 +157,20 @@ export function TestimonialsSection() {
         initial={{ opacity: 0 }}
         animate={inView ? { opacity: 1 } : {}}
         transition={{ duration: 0.6, delay: 0.3 }}
-        className="group relative flex w-full flex-col items-center justify-center overflow-hidden [--gap:1.25rem] [--duration:45s]"
+        className="relative w-full overflow-hidden"
       >
-        {/* 2 wrapped sets — each set is shrink-0 so -50% = exactly one set's width */}
-        <div className="flex w-max will-change-transform animate-marquee group-hover:[animation-play-state:paused]">
-          {[0, 1].map((setIndex) => (
-            <div key={setIndex} className="flex shrink-0 [gap:var(--gap)] [padding-right:var(--gap)]">
-              {testimonials.map((t, i) => (
-                <TestimonialCard key={`${setIndex}-${i}`} {...t} />
-              ))}
-            </div>
-          ))}
+        {/* Track — JS-driven pixel scroll, no CSS percentage issues */}
+        <div
+          ref={trackRef}
+          className="flex gap-5"
+          onMouseEnter={() => { pausedRef.current = true; }}
+          onMouseLeave={() => { pausedRef.current = false; }}
+        >
+          {[...Array(COPIES)].map((_, setIndex) =>
+            testimonials.map((t, i) => (
+              <TestimonialCard key={`${setIndex}-${i}`} {...t} />
+            ))
+          )}
         </div>
 
         {/* Fade edges */}
