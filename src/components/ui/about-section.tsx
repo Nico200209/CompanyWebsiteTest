@@ -51,6 +51,8 @@ export function AboutSection() {
             />
             {/* Dark tint */}
             <div className="absolute inset-0 bg-caoba-primary/30" />
+            {/* Bottom gradient for text legibility */}
+            <div className="absolute inset-x-0 bottom-0 h-40 bg-gradient-to-t from-caoba-primary/90 to-transparent" />
             {/* Gold right border accent */}
             <div className="absolute right-0 top-0 bottom-0 w-1 bg-caoba-accent" />
 
@@ -64,7 +66,7 @@ export function AboutSection() {
               <p className="text-xs font-bold tracking-[0.22em] text-caoba-accent uppercase mb-1">
                 Caoba Consulting &amp; Investment
               </p>
-              <p className="text-white/50 text-xs leading-relaxed">
+              <p className="text-white/80 text-xs leading-relaxed">
                 Más de 15 años transformando organizaciones en América Latina.
               </p>
             </motion.div>
@@ -121,7 +123,7 @@ export function AboutSection() {
                   initial={{ opacity: 0, x: 16 }}
                   animate={inView ? { opacity: 1, x: 0 } : {}}
                   transition={{ duration: 0.5, delay: 0.35 + i * 0.1 }}
-                  className="group flex gap-4 border-b border-white/8 py-5 pr-6 last:border-0 sm:[&:nth-child(odd)]:border-r sm:[&:nth-child(odd)]:border-white/8"
+                  className="group flex gap-4 border-b border-white/8 py-5 pr-6 last:border-0 sm:[&:nth-child(odd)]:border-r sm:[&:nth-child(odd)]:border-white/8 sm:[&:nth-child(even)]:pl-6"
                 >
                   {/* Number */}
                   <span className="mt-0.5 shrink-0 text-xs font-black tracking-widest text-caoba-accent">
