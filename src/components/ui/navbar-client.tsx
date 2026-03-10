@@ -16,14 +16,20 @@ export function NavbarClient() {
 
   return (
     <>
-      <div className="mx-auto flex max-w-7xl items-center justify-between px-6 py-4">
+      <div className="mx-auto flex max-w-7xl items-center justify-between px-6 py-3.5">
+        {/* Logo */}
+        <a href="#inicio" className="flex flex-col leading-none">
+          <span className="text-xl font-bold tracking-wide text-white">Caoba</span>
+          <span className="text-[9px] tracking-[0.22em] text-white/50 uppercase">Consulting &amp; Investment</span>
+        </a>
+
         {/* Desktop links */}
         <div className="hidden items-center gap-10 md:flex">
           {navItems.map((item) => (
             <a
               key={item.name}
               href={item.url}
-              className="text-xs font-bold tracking-widest text-white/80 transition-colors hover:text-white"
+              className="text-xs font-bold tracking-widest text-white/70 transition-colors hover:text-white"
             >
               {item.name}
             </a>
@@ -33,10 +39,9 @@ export function NavbarClient() {
         {/* Desktop CTA */}
         <a
           href="#contacto"
-          className="hidden items-center gap-2 text-sm font-semibold text-white transition-colors hover:text-caoba-accent md:flex"
+          className="hidden items-center gap-2 rounded-sm border border-caoba-accent px-4 py-2 text-[11px] font-bold tracking-widest text-caoba-accent transition-colors hover:bg-caoba-accent hover:text-caoba-primary-dark md:flex"
         >
-          Hablemos sobre tu proyecto
-          <span className="inline-block h-px w-10 bg-white" />
+          CONTÁCTANOS
         </a>
 
         {/* Mobile hamburger */}

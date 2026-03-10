@@ -7,43 +7,25 @@ import { HeroContent } from "@/components/ui/hero-content";
 export function HeroSection() {
   return (
     <>
-      {/* ── Top info bar (server-rendered, no layout shift) ── */}
-      <div className="border-b border-caoba-border bg-white">
-        <div className="mx-auto flex max-w-7xl flex-col items-center gap-4 px-6 py-4 md:flex-row md:justify-between">
-          {/* Logo */}
-          <div className="flex flex-col items-center leading-none md:items-start">
-            <span className="text-3xl font-bold tracking-wide text-caoba-heading">Caoba</span>
-            <span className="text-[11px] tracking-[0.2em] text-caoba-body">Consulting &amp; Investment</span>
-          </div>
-
-          {/* Contact items */}
-          <div className="flex flex-wrap items-center justify-center gap-8 md:justify-end">
-            <div className="flex items-start gap-2">
-              <IoLocationOutline className="mt-0.5 h-5 w-5 shrink-0 text-caoba-heading" />
-              <div className="text-xs leading-5">
-                <p className="font-semibold text-caoba-heading">República Dominicana</p>
-                <p className="text-caoba-body">Av. Sarasota N° 55, Santo Domingo.</p>
-              </div>
-            </div>
-            <div className="flex items-start gap-2">
-              <MdOutlineEmail className="mt-0.5 h-5 w-5 shrink-0 text-caoba-heading" />
-              <div className="text-xs leading-5">
-                <p className="font-semibold text-caoba-heading">info@caobaconsultores.com</p>
-                <p className="text-caoba-body">Horario de atención: 09:00am – 06:00pm</p>
-              </div>
-            </div>
-            <div className="flex items-start gap-2">
-              <MdOutlinePhone className="mt-0.5 h-5 w-5 shrink-0 text-caoba-heading" />
-              <div className="text-xs leading-5">
-                <p className="font-semibold text-caoba-heading">+1 (849) 507-7413</p>
-                <p className="text-caoba-body">Contáctanos</p>
-              </div>
-            </div>
-          </div>
+      {/* ── Slim contact strip ── */}
+      <div className="bg-caoba-primary-dark">
+        <div className="mx-auto flex max-w-7xl items-center justify-end gap-0 px-6 py-2 md:gap-0">
+          <a href="mailto:info@caobaconsultores.com" className="flex items-center gap-1.5 border-r border-white/10 px-4 text-[11px] text-white/60 transition-colors hover:text-caoba-accent-light">
+            <MdOutlineEmail className="h-3.5 w-3.5" />
+            info@caobaconsultores.com
+          </a>
+          <a href="tel:+18495077413" className="flex items-center gap-1.5 border-r border-white/10 px-4 text-[11px] text-white/60 transition-colors hover:text-caoba-accent-light">
+            <MdOutlinePhone className="h-3.5 w-3.5" />
+            +1 (849) 507-7413
+          </a>
+          <span className="flex items-center gap-1.5 pl-4 text-[11px] text-white/40">
+            <IoLocationOutline className="h-3.5 w-3.5" />
+            Santo Domingo, RD
+          </span>
         </div>
       </div>
 
-      {/* ── Navbar (client — only interactive part) ────────── */}
+      {/* ── Navbar with logo (client — only interactive part) ── */}
       <nav className="sticky top-0 z-50 bg-caoba-primary shadow-md">
         <NavbarClient />
       </nav>
