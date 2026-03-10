@@ -91,16 +91,48 @@ export function TestimonialsSection() {
             </motion.h2>
           </div>
 
-          {/* Right: subtext */}
-          <motion.p
-            initial={{ opacity: 0, y: 16 }}
-            animate={inView ? { opacity: 1, y: 0 } : {}}
-            transition={{ duration: 0.55, delay: 0.2 }}
-            className="text-base leading-relaxed text-caoba-body md:text-right"
-          >
-            Cada testimonio representa una organización que decidió transformarse.
-            Estas son sus historias.
-          </motion.p>
+          {/* Right: stats + subtext */}
+          <div className="flex flex-col gap-6 md:items-end">
+            {/* Mini stats row */}
+            <motion.div
+              initial={{ opacity: 0, y: 16 }}
+              animate={inView ? { opacity: 1, y: 0 } : {}}
+              transition={{ duration: 0.55, delay: 0.15 }}
+              className="flex gap-8 md:justify-end"
+            >
+              {[
+                { value: "50+", label: "empresas transformadas" },
+                { value: "98%", label: "tasa de satisfacción" },
+                { value: "15+", label: "años de experiencia" },
+              ].map((stat) => (
+                <div key={stat.label} className="text-center md:text-right">
+                  <p className="text-2xl font-black text-caoba-heading">{stat.value}</p>
+                  <p className="text-[11px] font-medium uppercase tracking-widest text-caoba-muted">
+                    {stat.label}
+                  </p>
+                </div>
+              ))}
+            </motion.div>
+
+            {/* Divider */}
+            <motion.div
+              initial={{ scaleX: 0, originX: 1 }}
+              animate={inView ? { scaleX: 1 } : {}}
+              transition={{ duration: 0.5, delay: 0.2 }}
+              className="h-px w-full bg-caoba-border"
+            />
+
+            {/* Subtext */}
+            <motion.p
+              initial={{ opacity: 0, y: 16 }}
+              animate={inView ? { opacity: 1, y: 0 } : {}}
+              transition={{ duration: 0.55, delay: 0.25 }}
+              className="text-base leading-relaxed text-caoba-body md:text-right"
+            >
+              Cada testimonio representa una organización que decidió transformarse.
+              Estas son sus historias.
+            </motion.p>
+          </div>
         </div>
       </div>
 
@@ -111,18 +143,20 @@ export function TestimonialsSection() {
         transition={{ duration: 0.6, delay: 0.3 }}
         className="group relative flex w-full flex-col items-center justify-center overflow-hidden [--gap:1.25rem] [--duration:45s]"
       >
-        {/* 2 identical sets — keyframe moves -50% so one full set scrolls then loops */}
-        <div className="flex [gap:var(--gap)] animate-marquee group-hover:[animation-play-state:paused]">
-          {[...Array(2)].map((_, setIndex) =>
-            testimonials.map((t, i) => (
-              <TestimonialCard key={`${setIndex}-${i}`} {...t} />
-            ))
-          )}
+        {/* 2 wrapped sets — each set is shrink-0 so -50% = exactly one set's width */}
+        <div className="flex w-max will-change-transform animate-marquee group-hover:[animation-play-state:paused]">
+          {[0, 1].map((setIndex) => (
+            <div key={setIndex} className="flex shrink-0 [gap:var(--gap)] [padding-right:var(--gap)]">
+              {testimonials.map((t, i) => (
+                <TestimonialCard key={`${setIndex}-${i}`} {...t} />
+              ))}
+            </div>
+          ))}
         </div>
 
         {/* Fade edges */}
-        <div className="pointer-events-none absolute inset-y-0 left-0 w-32 bg-gradient-to-r from-caoba-bg-soft to-transparent" />
-        <div className="pointer-events-none absolute inset-y-0 right-0 w-32 bg-gradient-to-l from-caoba-bg-soft to-transparent" />
+        <div className="pointer-events-none absolute inset-y-0 left-0 w-16 bg-gradient-to-r from-caoba-bg-soft to-transparent" />
+        <div className="pointer-events-none absolute inset-y-0 right-0 w-16 bg-gradient-to-l from-caoba-bg-soft to-transparent" />
       </motion.div>
     </section>
   );
