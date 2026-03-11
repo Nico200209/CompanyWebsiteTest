@@ -21,6 +21,7 @@ pnpm-debug.log*
 
 # Build output
 .next/
+next-env.d.ts
 tsconfig.tsbuildinfo
 dist/
 build/
