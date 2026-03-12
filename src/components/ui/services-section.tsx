@@ -8,6 +8,7 @@ import { GlareCard } from "@/components/ui/glare-card";
 const services = [
   {
     number: "01",
+    slug: "cierre-de-brechas",
     title: "Cierre de Brechas de Competencias",
     description:
       "¿Su equipo requiere nuevas habilidades para enfrentar los desafíos actuales y futuros? La falta de capacitación está limitando su crecimiento.",
@@ -16,6 +17,7 @@ const services = [
   },
   {
     number: "02",
+    slug: "data-e-inteligencia",
     title: "Data y Modelos de Inteligencia Corporativa",
     description:
       "¿Toma decisiones basadas en intuición en lugar de datos? La falta de información precisa le impide identificar oportunidades y anticipar riesgos.",
@@ -24,6 +26,7 @@ const services = [
   },
   {
     number: "03",
+    slug: "planificacion-estrategica",
     title: "Planificación Estratégica Sostenible",
     description:
       "¿Su estrategia actual no está generando los resultados esperados? ¿Le cuesta alinear a su equipo alrededor de objetivos comunes?",
@@ -32,6 +35,7 @@ const services = [
   },
   {
     number: "04",
+    slug: "eficiencia-operativa",
     title: "Eficiencia Operativa con Enfoque Estratégico",
     description:
       "¿Sus procesos operativos son lentos, costosos o ineficientes? La falta de optimización consume recursos que podrían impulsar el crecimiento.",
@@ -40,6 +44,7 @@ const services = [
   },
   {
     number: "05",
+    slug: "transformacion-cultural",
     title: "Transformación Cultural y Comunicación Estratégica",
     description:
       "¿Su cultura organizacional no está alineada con sus objetivos? La falta de comunicación interna genera desmotivación y desalineación.",
@@ -87,7 +92,7 @@ function ServiceCard({
             {service.description}
           </p>
           <a
-            href="#contacto"
+            href={`/servicios/${service.slug}`}
             className="inline-flex items-center gap-1.5 text-[11px] font-bold tracking-widest text-caoba-accent transition-colors hover:text-caoba-accent-light uppercase"
           >
             Leer más
