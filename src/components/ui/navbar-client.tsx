@@ -84,14 +84,14 @@ export function NavbarClient() {
             </AnimatePresence>
           </div>
 
-          <a href="/#contacto" className="text-xs font-bold tracking-widest text-white/70 transition-colors hover:text-white">
+          <a href="/contacto" className="text-xs font-bold tracking-widest text-white/70 transition-colors hover:text-white">
             CONTACTO
           </a>
         </div>
 
         {/* Desktop CTA */}
         <a
-          href="/#contacto"
+          href="/contacto"
           className="hidden items-center gap-2 rounded-sm border border-caoba-accent px-4 py-2 text-[11px] font-bold tracking-widest text-caoba-accent transition-colors hover:bg-caoba-accent hover:text-caoba-primary-dark md:flex"
         >
           CONTÁCTANOS
@@ -165,10 +165,10 @@ export function NavbarClient() {
             </AnimatePresence>
           </div>
 
-          <a href="/#contacto" onClick={() => setMobileOpen(false)} className="py-2 text-xs font-bold tracking-widest text-white/80 hover:text-white">
+          <a href="/contacto" onClick={() => setMobileOpen(false)} className="py-2 text-xs font-bold tracking-widest text-white/80 hover:text-white">
             CONTACTO
           </a>
-          <a href="/#contacto" onClick={() => setMobileOpen(false)} className="mt-2 text-sm font-semibold text-caoba-accent">
+          <a href="/contacto" onClick={() => setMobileOpen(false)} className="mt-2 text-sm font-semibold text-caoba-accent">
             Hablemos sobre tu proyecto →
           </a>
         </motion.div>

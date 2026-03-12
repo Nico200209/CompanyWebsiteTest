@@ -138,7 +138,7 @@ export function NosotrosCEOSection() {
               transition={{ duration: 0.6, delay: 0.85 }}
             >
               <a
-                href="/#contacto"
+                href="/contacto"
                 className="inline-flex items-center gap-3 rounded-sm bg-caoba-accent px-7 py-3.5 text-xs font-black uppercase tracking-widest text-caoba-primary-dark transition-colors hover:bg-caoba-accent-hover"
               >
                 Solicita tu asesoría

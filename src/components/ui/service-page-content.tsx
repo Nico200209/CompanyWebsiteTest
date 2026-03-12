@@ -204,7 +204,7 @@ function ServicesSidebar({ currentSlug }: { currentSlug: string }) {
           Conversemos sobre cómo podemos ayudarte a alcanzar tus objetivos.
         </p>
         <a
-          href="/#contacto"
+          href="/contacto"
           className="inline-flex items-center gap-2 text-xs font-bold uppercase tracking-widest text-white/60 transition-colors hover:text-caoba-accent"
         >
           Contáctanos
@@ -290,7 +290,7 @@ function SolutionsSection({ service }: { service: Service }) {
               className="mt-10"
             >
               <a
-                href="/#contacto"
+                href="/contacto"
                 className="inline-flex items-center gap-3 bg-caoba-accent px-7 py-3.5 text-xs font-black uppercase tracking-widest text-caoba-primary-dark transition-colors hover:bg-caoba-accent-hover"
               >
                 Solicita tu asesoría
@@ -351,7 +351,7 @@ function CTASection() {
           transition={{ duration: 0.6, delay: 0.35 }}
         >
           <a
-            href="/#contacto"
+            href="/contacto"
             className="inline-flex items-center gap-3 bg-caoba-primary-dark px-8 py-4 text-xs font-black uppercase tracking-widest text-white transition-colors hover:bg-caoba-primary"
           >
             Solicita tu asesoría

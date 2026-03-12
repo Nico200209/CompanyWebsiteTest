@@ -148,7 +148,7 @@ export function AboutSection() {
               transition={{ duration: 0.5, delay: 0.75 }}
             >
               <a
-                href="#contacto"
+                href="/contacto"
                 className="inline-flex items-center gap-3 rounded-sm bg-caoba-accent px-6 py-3 text-xs font-black uppercase tracking-widest text-caoba-primary-dark transition-colors hover:bg-caoba-accent-hover"
               >
                 Hablemos sobre tu proyecto
