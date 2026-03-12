@@ -20,6 +20,9 @@ yarn-error.log*
 pnpm-debug.log*
 
 # Build output
+.next/
+next-env.d.ts
+tsconfig.tsbuildinfo
 dist/
 build/
 out/
@@ -32,7 +35,6 @@ out/
 .env.production.local
 
 # Editor
-.vscode/
 .idea/
 *.swp
 *.swo
