@@ -12,7 +12,7 @@ function SplitName({ inView }: { inView: boolean }) {
     { text: "Paetz",  bold: true  },
   ];
   return (
-    <h2 className="mb-6 flex flex-wrap gap-x-4 text-5xl leading-tight text-caoba-heading md:text-6xl lg:text-7xl">
+    <h2 className="mb-6 flex flex-wrap gap-x-4 text-5xl leading-tight text-white md:text-6xl lg:text-7xl">
       {words.map((w, i) => (
         <span key={w.text} className="overflow-hidden">
           <motion.span
@@ -34,7 +34,7 @@ export function NosotrosCEOSection() {
   const inView = useInView(ref, { once: true, amount: 0.25 });
 
   return (
-    <section className="bg-caoba-bg overflow-hidden py-24">
+    <section className="bg-caoba-primary overflow-hidden py-24">
       <div ref={ref} className="mx-auto max-w-7xl px-6">
         <div className="grid grid-cols-1 items-center gap-16 lg:grid-cols-[5fr_6fr]">
 
@@ -45,7 +45,7 @@ export function NosotrosCEOSection() {
               initial={{ scaleY: 0, originY: 1 }}
               animate={inView ? { scaleY: 1 } : {}}
               transition={{ duration: 0.7, ease: [0.22, 1, 0.36, 1] }}
-              className="absolute -bottom-6 -left-6 h-full w-full bg-caoba-primary"
+              className="absolute -bottom-6 -left-6 h-full w-full bg-caoba-primary-dark"
             />
 
             {/* Photo */}
@@ -122,10 +122,10 @@ export function NosotrosCEOSection() {
               initial={{ opacity: 0, y: 16 }}
               animate={inView ? { opacity: 1, y: 0 } : {}}
               transition={{ duration: 0.7, delay: 0.7 }}
-              className="mb-10 max-w-lg text-base leading-relaxed text-caoba-body"
+              className="mb-10 max-w-lg text-base leading-relaxed text-white/70"
             >
               Como fundadora de{" "}
-              <strong className="font-black text-caoba-heading">Caoba</strong>
+              <strong className="font-black text-white">Caoba</strong>
               , trabajo con empresas e instituciones para cerrar brechas de
               competencias y fortalecer el desarrollo organizacional, creando
               soluciones prácticas y sostenibles a largo plazo.
@@ -139,7 +139,7 @@ export function NosotrosCEOSection() {
             >
               <a
                 href="/#contacto"
-                className="inline-flex items-center gap-3 rounded-sm bg-caoba-primary px-7 py-3.5 text-xs font-black uppercase tracking-widest text-white transition-colors hover:bg-caoba-primary-light"
+                className="inline-flex items-center gap-3 rounded-sm bg-caoba-accent px-7 py-3.5 text-xs font-black uppercase tracking-widest text-caoba-primary-dark transition-colors hover:bg-caoba-accent-hover"
               >
                 Solicita tu asesoría
                 <HiOutlineArrowRight className="h-4 w-4" />

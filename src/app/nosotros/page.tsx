@@ -1,6 +1,7 @@
 import { NosotrosIntroSection } from "@/components/ui/nosotros-intro-section";
 import { NosotrosFilosofiaSection } from "@/components/ui/nosotros-filosofia-section";
 import { NosotrosCEOSection } from "@/components/ui/nosotros-ceo-section";
+import { NosotrosTeamSection } from "@/components/ui/nosotros-team-section";
 import { NavbarClient } from "@/components/ui/navbar-client";
 import { FooterSection } from "@/components/ui/footer-section";
 import { MdOutlineEmail, MdOutlinePhone } from "react-icons/md";
@@ -78,6 +79,7 @@ export default function NosotrosPage() {
       <NosotrosIntroSection />
       <NosotrosFilosofiaSection />
       <NosotrosCEOSection />
+      <NosotrosTeamSection />
 
       {/* ── Footer ── */}
       <FooterSection />

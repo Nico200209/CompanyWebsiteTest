@@ -52,38 +52,33 @@ function AnimatedCheck({ inView, delay }: { inView: boolean; delay: number }) {
 }
 
 export function NosotrosFilosofiaSection() {
-  // Ref placed on "Nuestros Pilares" subheading — midway through the section —
-  // so the heading + description above are visible before anything animates.
   const triggerRef = useRef<HTMLDivElement>(null);
   const inView = useInView(triggerRef, { once: true, amount: 0.4 });
 
   return (
-    <section className="bg-caoba-primary-dark overflow-hidden py-24">
+    <section className="bg-caoba-bg-soft overflow-hidden py-24">
       <div className="mx-auto max-w-7xl px-6">
         <div className="grid grid-cols-1 items-center gap-16 lg:grid-cols-2">
 
           {/* ── Left: text + pillars ── */}
           <div>
-
-            {/* Heading — no trigger yet, just fades in when section enters */}
             <motion.h2
               initial={{ opacity: 0, y: 32 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, amount: 0.2 }}
               transition={{ duration: 0.9, ease: [0.22, 1, 0.36, 1] }}
-              className="mb-6 text-4xl font-light leading-tight text-white lg:text-5xl"
+              className="mb-6 text-4xl font-light leading-tight text-caoba-heading lg:text-5xl"
             >
               Filosofía{" "}
               <strong className="font-black">de trabajo</strong>
             </motion.h2>
 
-            {/* Description */}
             <motion.p
               initial={{ opacity: 0, y: 18 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, amount: 0.2 }}
               transition={{ duration: 0.85, delay: 0.2, ease: "easeOut" }}
-              className="mb-10 text-sm leading-relaxed text-white/60"
+              className="mb-10 text-sm leading-relaxed text-caoba-body"
             >
               Transformamos la manera en la que las organizaciones piensan sobre
               su desarrollo estratégico. Cada empresa tiene un potencial único que
@@ -91,13 +86,12 @@ export function NosotrosFilosofiaSection() {
               formación continua de su equipo para generar impacto duradero.
             </motion.p>
 
-            {/* ── Trigger point: pillar animations fire when this label is almost fully visible ── */}
             <div ref={triggerRef}>
               <motion.p
                 initial={{ opacity: 0, x: -20 }}
                 animate={inView ? { opacity: 1, x: 0 } : {}}
                 transition={{ duration: 0.8 }}
-                className="mb-8 text-2xl font-light text-white"
+                className="mb-8 text-2xl font-light text-caoba-heading"
               >
                 Nuestros <strong className="font-black">Pilares</strong>
               </motion.p>
@@ -117,10 +111,10 @@ export function NosotrosFilosofiaSection() {
                   >
                     <AnimatedCheck inView={inView} delay={0.3 + i * 0.25} />
                     <div>
-                      <p className="mb-1 text-xs font-black uppercase tracking-[0.18em] text-white">
+                      <p className="mb-1 text-xs font-black uppercase tracking-[0.18em] text-caoba-heading">
                         {p.title}
                       </p>
-                      <p className="text-xs leading-relaxed text-white/50">
+                      <p className="text-xs leading-relaxed text-caoba-body">
                         {p.description}
                       </p>
                     </div>
