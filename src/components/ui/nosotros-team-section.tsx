@@ -195,7 +195,7 @@ export function NosotrosTeamSection() {
               </p>
             </div>
             <a
-              href="/#contacto"
+              href="/contacto"
               className="inline-flex shrink-0 items-center gap-3 bg-caoba-accent px-7 py-3.5 text-xs font-black uppercase tracking-widest text-caoba-primary-dark transition-colors hover:bg-caoba-accent-hover"
             >
               Contáctanos
