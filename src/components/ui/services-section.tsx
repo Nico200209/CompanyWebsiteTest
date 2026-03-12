@@ -69,37 +69,36 @@ function ServiceCard({
       transition={{ duration: 0.55, delay: 0.15 + index * 0.08 }}
       className="flex justify-center"
     >
-      <GlareCard
-        containerClassName="w-full [aspect-ratio:4/3]"
-        className="relative overflow-hidden"
-      >
-        <img
-          src={service.image}
-          alt={service.title}
-          className="absolute inset-0 h-full w-full object-cover"
-        />
-        <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/40 to-black/10" />
-        <div className="absolute left-5 top-5">
-          <span className="text-[11px] font-bold tracking-[0.22em] text-caoba-accent">
-            {service.number}
-          </span>
-        </div>
-        <div className="absolute bottom-0 left-0 right-0 p-6">
-          <h3 className="mb-2 text-sm font-black uppercase leading-tight tracking-wide text-white">
-            {service.title}
-          </h3>
-          <p className="mb-4 text-xs leading-relaxed text-white/60">
-            {service.description}
-          </p>
-          <a
-            href={`/servicios/${service.slug}`}
-            className="inline-flex items-center gap-1.5 text-[11px] font-bold tracking-widest text-caoba-accent transition-colors hover:text-caoba-accent-light uppercase"
-          >
-            Leer más
-            <HiOutlineArrowRight className="h-3.5 w-3.5" />
-          </a>
-        </div>
-      </GlareCard>
+      <a href={`/servicios/${service.slug}`} className="w-full block">
+        <GlareCard
+          containerClassName="w-full [aspect-ratio:4/3]"
+          className="relative overflow-hidden"
+        >
+          <img
+            src={service.image}
+            alt={service.title}
+            className="absolute inset-0 h-full w-full object-cover"
+          />
+          <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/40 to-black/10" />
+          <div className="absolute left-5 top-5">
+            <span className="text-[11px] font-bold tracking-[0.22em] text-caoba-accent">
+              {service.number}
+            </span>
+          </div>
+          <div className="absolute bottom-0 left-0 right-0 p-6">
+            <h3 className="mb-2 text-sm font-black uppercase leading-tight tracking-wide text-white">
+              {service.title}
+            </h3>
+            <p className="mb-4 text-xs leading-relaxed text-white/60">
+              {service.description}
+            </p>
+            <span className="inline-flex items-center gap-1.5 text-[11px] font-bold tracking-widest text-caoba-accent uppercase">
+              Leer más
+              <HiOutlineArrowRight className="h-3.5 w-3.5" />
+            </span>
+          </div>
+        </GlareCard>
+      </a>
     </motion.div>
   );
 }

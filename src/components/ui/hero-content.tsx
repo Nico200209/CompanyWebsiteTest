@@ -42,7 +42,7 @@ export function HeroContent() {
         </motion.p>
 
         <motion.a
-          href="/contacto"
+          href="#contacto"
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, delay: 0.5 }}
