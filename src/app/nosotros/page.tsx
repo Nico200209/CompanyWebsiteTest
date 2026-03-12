@@ -1,4 +1,6 @@
-import { NosotrosClient } from "@/components/ui/nosotros-client";
+import { NosotrosIntroSection } from "@/components/ui/nosotros-intro-section";
+import { NosotrosFilosofiaSection } from "@/components/ui/nosotros-filosofia-section";
+import { NosotrosCEOSection } from "@/components/ui/nosotros-ceo-section";
 import { NavbarClient } from "@/components/ui/navbar-client";
 import { FooterSection } from "@/components/ui/footer-section";
 import { MdOutlineEmail, MdOutlinePhone } from "react-icons/md";
@@ -73,8 +75,9 @@ export default function NosotrosPage() {
         </div>
       </section>
 
-      {/* ── Animated client sections ── */}
-      <NosotrosClient />
+      <NosotrosIntroSection />
+      <NosotrosFilosofiaSection />
+      <NosotrosCEOSection />
 
       {/* ── Footer ── */}
       <FooterSection />
