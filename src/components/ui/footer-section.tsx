@@ -6,18 +6,18 @@ import { HiOutlineMapPin, HiOutlinePhone, HiOutlineEnvelope } from "react-icons/
 import { FaFacebookF, FaLinkedinIn, FaInstagram } from "react-icons/fa";
 
 const services = [
-  "Cierre de brechas de competencias organizacionales",
-  "Data y modelos de inteligencia corporativa",
-  "Planificación estratégica sostenible",
-  "Eficiencia operativa con enfoque estratégico",
-  "Transformación cultural y comunicación estratégica",
+  { label: "Cierre de brechas de competencias organizacionales", href: "/servicios/cierre-de-brechas" },
+  { label: "Data y modelos de inteligencia corporativa", href: "/servicios/data-e-inteligencia" },
+  { label: "Planificación estratégica sostenible", href: "/servicios/planificacion-estrategica" },
+  { label: "Eficiencia operativa con enfoque estratégico", href: "/servicios/eficiencia-operativa" },
+  { label: "Transformación cultural y comunicación estratégica", href: "/servicios/transformacion-cultural" },
 ];
 
 const navLinks = [
-  { label: "Inicio", href: "#" },
-  { label: "Nosotros", href: "#nosotros" },
-  { label: "Servicios", href: "#servicios" },
-  { label: "Contacto", href: "#contacto" },
+  { label: "Inicio", href: "/" },
+  { label: "Nosotros", href: "/nosotros" },
+  { label: "Servicios", href: "/servicios" },
+  { label: "Contacto", href: "/contacto" },
 ];
 
 const socials = [
@@ -107,13 +107,13 @@ export function FooterSection() {
             </p>
             <ul className="space-y-3">
               {services.map((s) => (
-                <li key={s}>
+                <li key={s.label}>
                   <a
-                    href="#servicios"
+                    href={s.href}
                     className="group flex gap-2 text-xs text-white/50 transition-colors hover:text-white"
                   >
                     <HiOutlineArrowRight className="mt-[3px] h-3 w-3 shrink-0 self-start text-caoba-accent/50 transition-colors group-hover:text-caoba-accent" />
-                    <span className="leading-relaxed">{s}</span>
+                    <span className="leading-relaxed">{s.label}</span>
                   </a>
                 </li>
               ))}
