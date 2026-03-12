@@ -5,10 +5,10 @@ import { motion } from "framer-motion";
 import { FaBars, FaTimes } from "react-icons/fa";
 
 const navItems = [
-  { name: "INICIO",    url: "#inicio" },
-  { name: "NOSOTROS",  url: "#nosotros" },
-  { name: "SERVICIOS", url: "#servicios" },
-  { name: "CONTACTO",  url: "#contacto" },
+  { name: "INICIO",    url: "/" },
+  { name: "NOSOTROS",  url: "/nosotros" },
+  { name: "SERVICIOS", url: "/#servicios" },
+  { name: "CONTACTO",  url: "/#contacto" },
 ];
 
 export function NavbarClient() {
@@ -18,7 +18,7 @@ export function NavbarClient() {
     <>
       <div className="mx-auto flex max-w-7xl items-center justify-between px-6 py-3.5">
         {/* Logo */}
-        <a href="#inicio" className="flex flex-col leading-none">
+        <a href="/" className="flex flex-col leading-none">
           <span className="text-xl font-bold tracking-wide text-white">Caoba</span>
           <span className="text-[9px] tracking-[0.22em] text-white/50 uppercase">Consulting &amp; Investment</span>
         </a>
@@ -38,7 +38,7 @@ export function NavbarClient() {
 
         {/* Desktop CTA */}
         <a
-          href="#contacto"
+          href="/#contacto"
           className="hidden items-center gap-2 rounded-sm border border-caoba-accent px-4 py-2 text-[11px] font-bold tracking-widest text-caoba-accent transition-colors hover:bg-caoba-accent hover:text-caoba-primary-dark md:flex"
         >
           CONTÁCTANOS
@@ -72,7 +72,7 @@ export function NavbarClient() {
             </a>
           ))}
           <a
-            href="#contacto"
+            href="/#contacto"
             className="mt-1 text-sm font-semibold text-caoba-accent"
             onClick={() => setMobileOpen(false)}
           >
