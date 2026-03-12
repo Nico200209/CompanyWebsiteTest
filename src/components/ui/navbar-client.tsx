@@ -44,7 +44,7 @@ export function NavbarClient() {
             onMouseLeave={() => setServicesOpen(false)}
           >
             <a
-              href="/#servicios"
+              href="/servicios"
               className="flex items-center gap-1.5 text-xs font-bold tracking-widest text-white/70 transition-colors hover:text-white"
             >
               SERVICIOS

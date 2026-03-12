@@ -27,8 +27,8 @@ export function NosotrosIntroSection() {
       <div className="mx-auto max-w-7xl">
         <div className="grid grid-cols-1 lg:grid-cols-[2fr_3fr]">
 
-          {/* ── Image panel ── */}
-          <div className="relative min-h-[340px] lg:min-h-0">
+          {/* ── Image panel — hidden on mobile to avoid duplicate with hero ── */}
+          <div className="relative hidden min-h-[340px] lg:block lg:min-h-0">
             <Image
               src="https://images.unsplash.com/photo-1600880292203-757bb62b4baf?w=1200&auto=format&fit=crop&q=80"
               alt="Equipo Caoba Consulting"
